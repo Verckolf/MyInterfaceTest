@@ -1,0 +1,15 @@
+2019-04-25 15:51:33,999 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 213, in run_test
+    print(request.REQUEST)
+AttributeError: 'WSGIRequest' object has no attribute 'REQUEST'
