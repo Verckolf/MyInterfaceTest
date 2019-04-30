@@ -3,6 +3,7 @@ import logging
 import os
 import shutil
 import sys
+import requests
 
 import paramiko
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, StreamingHttpResponse
@@ -169,10 +170,14 @@ def add_case(request):
     :param request:
     :return:
     """
+    print("add case!!!!")
     account = request.session["now_account"]
+    print(account)
     if request.is_ajax():
+        print("is ajax")
         testcase_info = json.loads(request.body.decode('utf-8'))
         msg = case_info_logic(**testcase_info)
+        print("this is ",msg)
         return HttpResponse(get_ajax_msg(msg, '/api/test_list/1/'))
     elif request.method == 'GET':
         manage_info = {
@@ -233,14 +238,20 @@ def run_test(request):
         main_hrun.delay(testcase_dir_path, report_name)
         return HttpResponse('用例执行中，请稍后查看报告即可,默认时间戳命名报告')
     else:
+        print("is not ajax")
         id = request.POST.get('id')
         base_url = request.POST.get('env_name')
         type = request.POST.get('type', 'test')
+        print(id,base_url,type)
 
         run_test_by_type(id, base_url, testcase_dir_path, type)
         runner.run(testcase_dir_path)
         shutil.rmtree(testcase_dir_path)
         runner.summary = timestamp_to_datetime(runner.summary, type=False)
+
+        #修复BUG一，测试完成后report没有落库，可能是没有调用此方法，补充如下：
+        report_name = kwargs.get('report_name', None)
+        add_test_reports(runner, report_name=report_name)
 
         return render_to_response('report_template.html', runner.summary)
 
@@ -524,10 +535,12 @@ def report_list(request, id):
         report_info = json.loads(request.body.decode('utf-8'))
 
         if report_info.get('mode') == 'del':
+            print(report_info.get('mode'))
             msg = del_report_data(report_info.pop('id'))
         return HttpResponse(get_ajax_msg(msg, 'ok'))
     else:
         filter_query = set_filter_session(request)
+        print(filter_query)
         report_list = get_pager_info(
             TestReports, filter_query, '/api/report_list/', id)
         manage_info = {
@@ -807,4 +820,10 @@ def echo(request):
 
 #第三方接口
 def test(request):
+    receive_data = json.loads(request.body.decode('utf-8'))
+    way = receive_data['way']
+    name = receive_data['name']
+    print(way,name)
+    id = TestCaseInfo.objects.get(name=name).id
+    print(id,type(id))
     return JsonResponse({'status':200})

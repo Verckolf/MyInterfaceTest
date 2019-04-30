@@ -1,8 +1,8 @@
 
 def process(request, **kwargs):
-    print("func process start!!!")
-    print(request)
-    print(kwargs)
+    # print("func process start!!!")
+    # print(request)
+    # print(kwargs)
     app = kwargs.pop('app', None)
     fun = kwargs.pop('function', None)
     index = kwargs.pop('id', None)
