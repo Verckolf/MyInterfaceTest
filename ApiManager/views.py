@@ -3,7 +3,7 @@ import logging
 import os
 import shutil
 import sys
-import requests
+import ApiManager.tools as tools
 
 import paramiko
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, StreamingHttpResponse
@@ -35,10 +35,10 @@ logger = logging.getLogger('HttpRunnerManager')
 
 def login_check(func):
     def wrapper(request, *args, **kwargs):
-        if not request.session.get('login_status'):
+        #做了一个开关，如果是/api/则需要验签，如果是/admin/则无需验签
+        if request.path.split('/')[1] == 'api' and not request.session.get('login_status'):
             return HttpResponseRedirect('/api/login/')
         return func(request, *args, **kwargs)
-
     return wrapper
 
 
@@ -170,11 +170,8 @@ def add_case(request):
     :param request:
     :return:
     """
-    print("add case!!!!")
     account = request.session["now_account"]
-    print(account)
     if request.is_ajax():
-        print("is ajax")
         testcase_info = json.loads(request.body.decode('utf-8'))
         msg = case_info_logic(**testcase_info)
         print("this is ",msg)
@@ -211,15 +208,16 @@ def add_config(request):
 def run_test(request):
     print("!!!用例开始运行!!!")
     print(request.body)
+    print(request.path)
     print(request.encoding)
     print(request.method)
+    print(request.META.get("CONTENT_TYPE"))
     print("请求来源:",request.META.get("REMOTE_ADDR"))
     """
     运行用例
     :param request:
     :return:
     """
-
     kwargs = {
         "failfast": False,
     }
@@ -238,14 +236,14 @@ def run_test(request):
         main_hrun.delay(testcase_dir_path, report_name)
         return HttpResponse('用例执行中，请稍后查看报告即可,默认时间戳命名报告')
     else:
-        print("is not ajax")
         id = request.POST.get('id')
         base_url = request.POST.get('env_name')
         type = request.POST.get('type', 'test')
         print(id,base_url,type)
 
         run_test_by_type(id, base_url, testcase_dir_path, type)
-        runner.run(testcase_dir_path)
+        t1 = runner.run(testcase_dir_path)
+        print("用例执行结果",t1.gen_html_report())
         shutil.rmtree(testcase_dir_path)
         runner.summary = timestamp_to_datetime(runner.summary, type=False)
 
@@ -818,12 +816,36 @@ def echo(request):
                 request.websocket.send(bytes(line, encoding='utf8'))
             client.close()
 
-#第三方接口
-def test(request):
-    receive_data = json.loads(request.body.decode('utf-8'))
-    way = receive_data['way']
-    name = receive_data['name']
-    print(way,name)
-    id = TestCaseInfo.objects.get(name=name).id
-    print(id,type(id))
-    return JsonResponse({'status':200})
+#第三方调用接口
+def admin_test(request):
+    try:
+        base_url = tools.get(request,'env_name')
+        name = tools.get(request,'name')
+    except Exception:
+        return JsonResponse({"status":2000,"message":"parameter 'base_url' or 'name' is Missing"})
+    else:
+        id = TestCaseInfo.objects.get(name=name).id
+        kwargs = {"failfast": False,}
+        runner = HttpRunner(**kwargs)
+        testcase_dir_path = os.path.join(os.getcwd(), "suite")
+        testcase_dir_path = os.path.join(testcase_dir_path, get_time_stamp())
+        type = request.POST.get('type', 'test')
+
+        run_test_by_type(id, base_url, testcase_dir_path, type)
+        runner.run(testcase_dir_path)
+        shutil.rmtree(testcase_dir_path)
+        runner.summary = timestamp_to_datetime(runner.summary, type=False)
+        report_name = kwargs.get('report_name', None)
+        reports_url = add_test_reports(runner, report_name=report_name)
+
+        timeStamp = tools.getRe(reports_url,r"\\(\d+?)\.")
+        name = tools.getTime(int(timeStamp))
+        id = TestReports.objects.get(report_name=name).id
+        reports_url = "http://192.168.80.86:8000/admin/view_report/%d/" %(id)
+
+        status = runner.summary.get('success')
+        successes = runner.summary.get('stat').get('successes')
+        testsRun = runner.summary.get('stat').get('testsRun')
+
+        response_data = {'status':status,'success':successes,'testsRun':testsRun,'reports_url':reports_url}
+        return JsonResponse(response_data)

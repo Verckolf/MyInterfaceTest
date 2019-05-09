@@ -1,4 +1,12 @@
-2019-04-25 15:51:33,999 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+2019-04-29 15:50:16,682 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 11111用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '11111'}}
+2019-04-29 15:52:40,983 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 22222用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '22222'}}
+2019-04-29 16:05:25,547 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 4444用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '4444'}}
+2019-04-29 16:06:56,991 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 5用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '5'}}
+2019-04-29 16:09:13,051 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 99用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '99'}}
+2019-04-29 16:10:38,106 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 7用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '7'}}
+2019-04-29 16:14:30,527 [HttpRunnerManager:154] [operation:add_case_data] [INFO]- 6用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '6'}}
+2019-04-29 16:30:23,992 [HttpRunnerManager:155] [operation:add_case_data] [INFO]- 91用例添加成功: {'test': {'request': {'url': '', 'method': 'POST'}, 'name': '91'}}
+2019-04-29 17:28:46,457 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
 Traceback (most recent call last):
   File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
     response = get_response(request)
@@ -8,8 +16,1768 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
     result = fun(request, index) if index else fun(request)
-  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 39, in wrapper
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 826, in test
+    id = TestReports.objects.get(name=name)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 394, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 836, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 854, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1253, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1277, in _add_q
+    split_subq=split_subq,
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1153, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1015, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1379, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: create_time, id, report_name, reports, start_at, status, successes, testsRun, update_time
+2019-04-29 17:30:25,360 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 827, in test
+    print(id,type(id))
+TypeError: 'int' object is not callable
+2019-04-29 17:37:07,525 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 826, in test
+    id = int(TestCaseInfo.objects.get(name=name))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'TestCaseInfo'
+2019-04-29 17:44:39,960 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 826, in test
+    id = TestCaseInfo.get(name=name)
+AttributeError: type object 'TestCaseInfo' has no attribute 'get'
+2019-04-29 17:50:05,073 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 826, in test
+    id = TestCaseInfo.objects.id
+AttributeError: 'TestCaseInfoManager' object has no attribute 'id'
+2019-04-30 10:27:03,913 [HttpRunnerManager:56] [views:login] [INFO]- admin 登录成功
+2019-04-30 15:06:41,573 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
     return func(request, *args, **kwargs)
-  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 213, in run_test
-    print(request.REQUEST)
-AttributeError: 'WSGIRequest' object has no attribute 'REQUEST'
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 15:09:21,463 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 250, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 15:15:03,592 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page': 1}}, 'name': 'test123'}}
+2019-04-30 15:15:11,741 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xE7\\x9C...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 250, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xE7\\x9C...' for column 'reports' at row 1")
+2019-04-30 15:15:46,399 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page': 1}}, 'name': 'test123'}}
+2019-04-30 15:21:58,913 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page=1': 1}}, 'name': 'test123'}}
+2019-04-30 15:22:02,741 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 250, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 461, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 15:23:54,726 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 15:25:52,500 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 15:28:57,785 [HttpRunnerManager:56] [views:login] [INFO]- admin 登录成功
+2019-04-30 15:29:14,440 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 16:19:23,648 [HttpRunnerManager:56] [views:login] [INFO]- admin 登录成功
+2019-04-30 16:20:13,244 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 16:21:06,592 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 461, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 16:26:02,759 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 461, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 16:32:32,694 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 461, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 16:32:59,454 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page': 1}}, 'name': 'test123'}}
+2019-04-30 16:49:55,149 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page=1': 1}}, 'name': 'test123'}}
+2019-04-30 16:50:01,864 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page': 1}}, 'name': 'test123'}}
+2019-04-30 16:50:17,531 [HttpRunnerManager:164] [operation:add_case_data] [INFO]- test123用例更新成功: {'test': {'request': {'url': 'satinApi', 'method': 'GET', 'params': {'type': 1, 'page=1': 1}}, 'name': 'test123'}}
+2019-04-30 16:50:21,555 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-04-30 18:33:23,275 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 40, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 251, in run_test
+    add_test_reports(runner, report_name=report_name)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\utils\operation.py", line 460, in add_test_reports
+    TestReports.objects.create(**test_reports)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 417, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 729, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 759, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 842, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 880, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1125, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1283, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.InternalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x82\\xF0\\x9F...' for column 'reports' at row 1")
+2019-05-05 13:40:05,900 [HttpRunnerManager:56] [views:login] [INFO]- admin 登录成功
+2019-05-05 15:33:50,152 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 15:36:23,372 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 15:36:23,413 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 831, in test
+    print(json.loads(r.text))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-05 15:38:22,520 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 15:38:22,555 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 831, in test
+    print(json.loads(r.text))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-05 15:54:26,204 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 15:55:44,276 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 15:56:16,416 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 16:01:14,740 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 16:04:03,532 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 16:04:30,949 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 16:30:09,945 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    fun = getattr(view, fun)
+AttributeError: module 'ApiManager.views' has no attribute 'admin'
+2019-05-05 16:31:17,314 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin/run_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 15, in process
+    fun = getattr(view, fun)
+AttributeError: module 'ApiManager.views' has no attribute 'admin'
+2019-05-05 16:32:12,328 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/run_test/admin
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/run_test/admin/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-05 16:55:08,528 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 822, in admin_test
+    receive_data = json.loads(request.body.decode('utf-8'))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-05 16:56:46,200 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 823, in admin_test
+    receive_data = json.loads(request.body.decode('utf-8'))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-05 17:08:54,996 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 825, in admin_test
+    print(request.body.get('way'))
+AttributeError: 'bytes' object has no attribute 'get'
+2019-05-05 17:22:28,549 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 823, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 2, in get
+    receive_data = json.loads(request.body.decode('utf-8'))
+NameError: name 'json' is not defined
+2019-05-06 10:04:47,072 [HttpRunnerManager:57] [views:login] [INFO]- admin 登录成功
+2019-05-06 10:05:49,995 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/view_report/25
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 61, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\middleware\common.py", line 99, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.80.86:8000/api/view_report/25/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-05-06 15:22:33,127 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 821, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 5, in get
+    return json.loads(request.body.decode('utf-8'))[key]
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-06 15:23:07,674 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 821, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 5, in get
+    return json.loads(request.body.decode('utf-8'))[key]
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-06 15:24:33,477 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 821, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 5, in get
+    return json.loads(request.body.decode('utf-8'))[key]
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-06 15:25:32,827 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 822, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 5, in get
+    return json.loads(request.body.decode('utf-8'))[key]
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-06 15:26:53,674 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 822, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 4, in get
+    receive_data = json.loads(request.body.decode('utf-8'))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-06 15:28:14,204 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 822, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 4, in get
+    receive_data = json.loads(request.body.decode('utf-8'))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-05-08 14:32:07,628 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 841, in admin_test
+    id = TestCaseInfo.objects.get(name=name).id
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 403, in get
+    self.model._meta.object_name
+ApiManager.models.DoesNotExist: TestCaseInfo matching query does not exist.
+2019-05-08 14:34:17,719 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 841, in admin_test
+    id = TestCaseInfo.objects.get(name=name).id
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 403, in get
+    self.model._meta.object_name
+ApiManager.models.DoesNotExist: TestCaseInfo matching query does not exist.
+2019-05-08 14:40:18,518 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 843, in admin_test
+    id = TestCaseInfo.objects.get(name=name).id
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 403, in get
+    self.model._meta.object_name
+ApiManager.models.DoesNotExist: TestCaseInfo matching query does not exist.
+2019-05-08 14:42:23,812 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 844, in admin_test
+    id = TestCaseInfo.objects.get(name=name).id
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 403, in get
+    self.model._meta.object_name
+ApiManager.models.DoesNotExist: TestCaseInfo matching query does not exist.
+2019-05-08 14:43:15,221 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 844, in admin_test
+    id = TestCaseInfo.objects.get(name=name).id
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 403, in get
+    self.model._meta.object_name
+ApiManager.models.DoesNotExist: TestCaseInfo matching query does not exist.
+2019-05-08 14:50:39,767 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 843, in admin_test
+    id = TestReports.objects.get(name=name).id
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 394, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 836, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 854, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1253, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1277, in _add_q
+    split_subq=split_subq,
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1153, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1015, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\query.py", line 1379, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: create_time, id, report_name, reports, start_at, status, successes, testsRun, update_time
+2019-05-08 15:23:26,164 [django.request:118] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /api/admin_test/
+Traceback (most recent call last):
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\HttpRunnerManager\activator.py", line 18, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\views.py", line 822, in admin_test
+    base_url = tools.get(request,'env_name')
+  File "E:\httpRunnerManager2.0\HttpRunnerManager\ApiManager\tools.py", line 8, in get
+    return json.loads(request.body.decode('utf-8'))[key]
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\S3707\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 355, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 4 column 1 (char 64)

@@ -7,7 +7,7 @@ def process(request, **kwargs):
     fun = kwargs.pop('function', None)
     index = kwargs.pop('id', None)
 
-    if app == 'api':
+    if app == 'api' or app == 'admin':
         app = 'ApiManager'
     try:
         app = __import__("%s.views" % app)
@@ -18,5 +18,4 @@ def process(request, **kwargs):
         result = fun(request, index) if index else fun(request)
     except (ImportError, AttributeError):
         raise
-
     return result

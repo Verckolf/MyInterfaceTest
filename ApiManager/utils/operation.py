@@ -136,7 +136,6 @@ def add_case_data(type, **kwargs):
     :param kwargs: dict
     :return: ok or tips
     """
-    print("!!!!!!!!!!!!!!!test case落库函数已被调用!!!!!!!!!!!!!")
     case_info = kwargs.get('test').get('case_info')
     case_opt = TestCaseInfo.objects
     name = kwargs.get('test').get('name')
@@ -456,6 +455,5 @@ def add_test_reports(runner, report_name=None):
         'start_at': runner.summary['time']['start_datetime'],
         'reports': reports
     }
-
     TestReports.objects.create(**test_reports)
     return report_path
